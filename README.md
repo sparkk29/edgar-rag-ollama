@@ -250,6 +250,21 @@ the cited source cards, which is exactly what the UI is designed for.
 - Index several fiscal years per company and add a fiscal-year filter.
 - LLM-as-judge answer scoring to complement the rule-based checks.
 
+## Project documentation
+
+Beyond this README, the project keeps its plans, current state and lessons in Markdown so that
+people and AI coding agents can pick up work quickly. Start with [`AGENTS.md`](AGENTS.md).
+
+| Where | What you will find |
+|---|---|
+| [`AGENTS.md`](AGENTS.md), [`RULES.md`](RULES.md) | How to work on the project and the rules that must not be broken |
+| [`PROJECT_CONTEXT.md`](PROJECT_CONTEXT.md), [`REQUIREMENTS.md`](REQUIREMENTS.md), [`FLOW.md`](FLOW.md) | What it is and why, requirements and acceptance criteria, ingest/query/eval flows |
+| [`planning/`](planning/) | [Plan](planning/PLAN.md), [tasks](planning/TASKS.md), [next steps](planning/NEXT.md), [checklists](planning/CHECKLIST.md), [roadmap](planning/ROADMAP.md) |
+| [`state/`](state/) | [Status](state/STATUS.md), [progress log](state/PROGRESS.md), [session notes](state/SESSION.md), [resume point](state/RESUME.md), [handoff](state/HANDOFF.md), [blockers](state/BLOCKERS.md) |
+| [`architecture/`](architecture/) | [Architecture](architecture/ARCHITECTURE.md), [tech stack](architecture/TECH_STACK.md), [CLI and Python API](architecture/API.md), [vector store schema](architecture/DATABASE.md), [decision records](architecture/DECISIONS.md) |
+| [`quality/`](quality/) | [Coding standards](quality/CODING_STANDARDS.md), [testing](quality/TESTING.md), [review checklist](quality/REVIEW.md), [end-to-end validation](quality/VALIDATION.md), [security](quality/SECURITY.md) |
+| [`knowledge/`](knowledge/) | [Key facts](knowledge/MEMORY.md), [failures and fixes](knowledge/FAILURES.md), [debugging guide](knowledge/DEBUGGING.md), [experiments](knowledge/EXPERIMENTS.md), [risks](knowledge/RISKS.md) |
+
 ## Project layout
 
 ```text
@@ -262,6 +277,8 @@ the cited source cards, which is exactly what the UI is designed for.
 ├── src/edgar_rag/            the pipeline (see Architecture)
 ├── tests/                    unit tests with a small HTML fixture
 ├── data/                     downloaded filings + Chroma index (git-ignored)
+├── AGENTS.md, RULES.md, ...  project docs (see Project documentation)
+├── planning/ state/ architecture/ quality/ knowledge/
 ├── pyproject.toml
 └── .env.example
 ```

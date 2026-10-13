@@ -1,4 +1,20 @@
-# edgar-rag: a local RAG assistant over SEC 10-K filings
+<p align="center">
+  <img src="assets/logo.svg" alt="edgar-rag logo" width="128" height="128">
+</p>
+
+<h1 align="center">edgar-rag</h1>
+
+<p align="center">
+  <strong>A local RAG assistant over SEC 10-K filings, with answers that cite their sources.</strong>
+</p>
+
+<p align="center">
+  <img alt="Python 3.12+" src="https://img.shields.io/badge/python-3.12%2B-3776AB?logo=python&logoColor=white">
+  <img alt="Runs on Ollama" src="https://img.shields.io/badge/LLM-Ollama-000000?logo=ollama&logoColor=white">
+  <img alt="Vector store: Chroma" src="https://img.shields.io/badge/vectors-Chroma-F97316">
+  <img alt="UI: Streamlit" src="https://img.shields.io/badge/UI-Streamlit-FF4B4B?logo=streamlit&logoColor=white">
+  <img alt="No API keys" src="https://img.shields.io/badge/API%20keys-none-10B981">
+</p>
 
 Ask questions about real annual reports (Form 10-K) from Apple, Microsoft and NVIDIA and get
 answers that cite the exact filing section they came from, with a link to the original document on
@@ -70,6 +86,9 @@ Requirements: macOS or Linux, [Homebrew](https://brew.sh) (or install `uv` and O
 about 6 GB of disk for the models. Tested on an Apple M4 Pro with 24 GB RAM.
 
 ```bash
+git clone https://github.com/sparkk29/edgar-rag-ollama.git
+cd edgar-rag-ollama
+
 brew install uv ollama
 brew services start ollama
 ollama pull qwen2.5:7b && ollama pull nomic-embed-text
@@ -80,6 +99,10 @@ cp .env.example .env          # then set SEC_USER_AGENT="Your Name you@example.c
 
 The SEC asks every client to identify itself; requests without a real name and email in the
 `User-Agent` header get blocked.
+
+Run all commands from the repository root (the folder containing `pyproject.toml`); `uv sync` fails
+with "No `pyproject.toml` found" anywhere else. To use `llama3.1:8b` instead of the default chat
+model, pull it and set `EDGAR_RAG_CHAT_MODEL=llama3.1:8b` in `.env`.
 
 ## Usage
 
@@ -232,6 +255,7 @@ the cited source cards, which is exactly what the UI is designed for.
 ```text
 .
 ├── app.py                    Streamlit chat UI
+├── assets/                   logo (SVG source and PNG export)
 ├── eval/
 │   ├── questions.yaml        labeled eval set
 │   └── reports/              eval transcripts per chat model
@@ -241,4 +265,3 @@ the cited source cards, which is exactly what the UI is designed for.
 ├── pyproject.toml
 └── .env.example
 ```
-# edgar-rag-ollama

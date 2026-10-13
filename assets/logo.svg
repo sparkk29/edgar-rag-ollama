@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128" role="img" aria-labelledby="title">
+  <title id="title">edgar-rag logo: a filing with a highlighted passage and a citation badge</title>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0F2A4A"/>
+      <stop offset="1" stop-color="#1E4D8C"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="128" height="128" rx="28" fill="url(#bg)"/>
+
+  <path d="M30 20 h38 l18 18 v62 a4 4 0 0 1 -4 4 h-52 a4 4 0 0 1 -4 -4 v-76 a4 4 0 0 1 4 -4 z" fill="#F8FAFC"/>
+  <path d="M68 20 v14 a4 4 0 0 0 4 4 h14 z" fill="#CBD5E1"/>
+
+  <rect x="36" y="31" width="24" height="5" rx="2.5" fill="#1E3A5F"/>
+  <rect x="36" y="44" width="40" height="4" rx="2" fill="#CBD5E1"/>
+  <rect x="32" y="53" width="48" height="19" rx="4" fill="#FDE68A"/>
+  <rect x="36" y="57" width="40" height="4" rx="2" fill="#D97706"/>
+  <rect x="36" y="64" width="30" height="4" rx="2" fill="#D97706"/>
+  <rect x="36" y="78" width="28" height="4" rx="2" fill="#CBD5E1"/>
+  <rect x="36" y="87" width="20" height="4" rx="2" fill="#CBD5E1"/>
+
+  <circle cx="90" cy="92" r="21" fill="#10B981" stroke="#173F70" stroke-width="5"/>
+  <g fill="none" stroke="#FFFFFF" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M81 82 h-4 v20 h4"/>
+    <path d="M99 82 h4 v20 h-4"/>
+    <path d="M86.5 86 l3.5 -3.5 v19.5"/>
+  </g>
+</svg>

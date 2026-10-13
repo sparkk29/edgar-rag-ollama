@@ -17,6 +17,11 @@ dependencies = [
     "typer>=0.12",
 ]
 
+[project.urls]
+Homepage = "https://github.com/sparkk29/edgar-rag-ollama"
+Repository = "https://github.com/sparkk29/edgar-rag-ollama"
+Issues = "https://github.com/sparkk29/edgar-rag-ollama/issues"
+
 [project.scripts]
 edgar-rag = "edgar_rag.cli:app"
 

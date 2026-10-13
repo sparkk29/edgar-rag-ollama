@@ -5,11 +5,11 @@ from __future__ import annotations
 import streamlit as st
 
 from edgar_rag.answer import citation_problems, stream_answer, unsupported_numbers
-from edgar_rag.config import settings
+from edgar_rag.config import PROJECT_ROOT, settings
 from edgar_rag.index import get_collection
 from edgar_rag.retrieve import Hit, company_aliases, detect_companies, retrieve
 
-st.set_page_config(page_title="10-K Assistant", page_icon=None, layout="wide")
+st.set_page_config(page_title="10-K Assistant", page_icon=str(PROJECT_ROOT / "assets" / "logo.png"), layout="wide")
 
 EXAMPLES = [
     "What supply chain risks does NVIDIA disclose?",

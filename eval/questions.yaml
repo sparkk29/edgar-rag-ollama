@@ -1,0 +1,126 @@
+# Labeled retrieval eval set.
+#
+# Section level: a question is a hit if any top-k chunk comes from `ticker` and one of `items`.
+#   Several items are listed when the answer legitimately lives in more than one section
+#   (e.g. revenue appears in MD&A, Item 7, and the financial statements, Item 8; NVIDIA places
+#   its financial statements under Item 15).
+# Evidence level (optional): a top-k chunk from `ticker` must contain `evidence` verbatim.
+#   This is stricter: Item 8 alone can span 15,000+ words.
+
+- question: What supply chain risks does NVIDIA disclose?
+  ticker: NVDA
+  items: [1A]
+  evidence: foundries
+
+- question: How do U.S. export controls affect NVIDIA's business?
+  ticker: NVDA
+  items: [1A, 7]
+
+- question: What was NVIDIA's Data Center revenue in fiscal year 2026?
+  ticker: NVDA
+  items: [7, 15]
+  evidence: "193,737"
+
+- question: How many employees does NVIDIA have?
+  ticker: NVDA
+  items: [1]
+  evidence: "42,000 employees"
+
+- question: What were Apple's iPhone net sales in fiscal 2025?
+  ticker: AAPL
+  items: [7, 8]
+  evidence: "209,586"
+
+- question: What Digital Markets Act proceedings involving Apple are disclosed?
+  ticker: AAPL
+  items: [3, 1A]
+  evidence: Digital Markets Act
+
+- question: How is Apple exposed to foreign exchange rate risk?
+  ticker: AAPL
+  items: [7A, 1A]
+  evidence: value-at-risk
+
+- question: Where is Apple headquartered and what facilities does it own or lease?
+  ticker: AAPL
+  items: [2]
+  evidence: Cupertino
+
+- question: Who does Apple compete with and how competitive are its markets?
+  ticker: AAPL
+  items: [1, 1A]
+
+- question: How does Microsoft manage cybersecurity risk and who oversees it?
+  ticker: MSFT
+  items: [1C]
+  evidence: Chief Information Security Officer
+
+- question: What is the nature of Microsoft's partnership and investment in OpenAI?
+  ticker: MSFT
+  items: [1, 7, 8]
+  evidence: OpenAI
+
+- question: What risks does Microsoft associate with developing and deploying AI?
+  ticker: MSFT
+  items: [1A]
+
+- question: How did Microsoft Cloud revenue change in fiscal year 2026?
+  ticker: MSFT
+  items: [7]
+  evidence: "214.4 billion"
+
+- question: How much did Microsoft return to shareholders through dividends and share repurchases?
+  ticker: MSFT
+  items: [5, 7, 8]
+  evidence: "returned $10.2 billion"
+
+# Harder: the company is not named, or the answer sits in a less obvious section.
+
+- question: Which company is headquartered in Santa Clara, California?
+  ticker: NVDA
+  items: [2]
+  evidence: headquarters is in Santa Clara
+
+- question: Which company's security program is led by a Head of Corporate Information Security?
+  ticker: AAPL
+  items: [1C]
+  evidence: Head of Corporate Information Security
+
+- question: Who is Apple's independent registered public accounting firm?
+  ticker: AAPL
+  items: [8, 9A]
+  evidence: Ernst & Young
+
+- question: Which NVIDIA directors or officers adopted Rule 10b5-1 trading plans?
+  ticker: NVDA
+  items: [9B]
+  evidence: Kress
+
+- question: How sensitive is NVIDIA's investment portfolio to a change in interest rates?
+  ticker: NVDA
+  items: [7A]
+  evidence: "0.5%"
+
+- question: What judgments are involved in Microsoft's goodwill impairment testing?
+  ticker: MSFT
+  items: [7, 8]
+
+- question: What was Apple's effective tax rate and what drove it?
+  ticker: AAPL
+  items: [7, 8]
+  evidence: "Effective tax rate | 15.6"
+
+- question: Which company reports results for Productivity and Business Processes, Intelligent Cloud, and More Personal Computing segments?
+  ticker: MSFT
+  items: [1, 7, 8]
+  evidence: Productivity and Business Processes
+
+- question: What were the gross margin percentages for Products and Services in fiscal 2025?
+  ticker: AAPL
+  items: [7]
+  evidence: "36.8"
+
+- question: What does NVIDIA say about customer concentration and its largest direct customers?
+  ticker: NVDA
+  items: [1A, 7, 15]
+  evidence: "22% of total revenue"
